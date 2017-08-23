@@ -1,6 +1,5 @@
 import {Inject, Injectable} from '@angular/core';
 import {BehaviorSubject} from 'rxjs/BehaviorSubject';
-import {User} from './model/user';
 import {Http} from '@angular/http';
 
 @Injectable()
@@ -25,9 +24,9 @@ export class AuthService {
       });
   }
 
-  getUser(): User {
+ /* getUser(): User {
     return new User(JSON.parse(localStorage.getItem(this.authUser)));
-  }
+  }*/
 
   getToken(): string {
     return localStorage.getItem(this.authToken);

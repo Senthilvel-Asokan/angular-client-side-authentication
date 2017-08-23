@@ -4,18 +4,18 @@ import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app.routing';
-import {LoginModule} from './auth/login/login.module';
+import {LoginComponent} from './auth/login/login.component';
 import {DashboardModule} from './dashboard/dashboard.module';
-import {AuthCheck} from './authcheck';
+import {AuthCheck} from './auth/authcheck';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,LoginComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LoginModule,
+    ,
     DashboardModule
   ],
   providers: [],
