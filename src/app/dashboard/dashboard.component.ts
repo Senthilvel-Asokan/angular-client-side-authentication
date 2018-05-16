@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() { }
+	constructor(private _router:Router){
+	}
+	    
+	logout(){
+	    window.localStorage.removeItem('AUTH_USER');
+	    this._router.navigate(['Login']);
+	}
 
   ngOnInit() {
   }

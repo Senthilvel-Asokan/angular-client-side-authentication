@@ -11,13 +11,8 @@ export function mockBackendFactory(backend: MockBackend, options: BaseRequestOpt
     if (connection.request.url.endsWith('/login') && connection.request.method === RequestMethod.Post) {
       const body = JSON.parse(connection.request.getBody());
       checkCredentials(body, connection);
-    } else if (connection.request.url.endsWith('/todos') && connection.request.method === RequestMethod.Get) {
-      if (connection.request.headers.get('Authorization') === 'fakeToken') {
-        connection.mockRespond(new Response(new ResponseOptions({status: 200, body: generateJsonResponseBody()})));
-      } else {
-        connection.mockRespond(new Response(new ResponseOptions({status: 401})));
-      }
-    } else {
+    } 
+    else {
       connection.mockRespond(new Response(new ResponseOptions({status: 404})));
     }
   });
@@ -44,18 +39,4 @@ function generateMockResponseOptions(): ResponseOptions {
     url: 'your-app.com/login',
     body: `{"firstName": "John", "lastName": "Doe"}`
   });
-}
-
-function generateJsonResponseBody(): string {
-  return `[
-    {"title":"Todo 1", "content": "This is test content 1"},
-    {"title":"Todo 2", "content": "This is test content 2"},
-    {"title":"Todo 3", "content": "This is test content 3"},
-    {"title":"Todo 4", "content": "This is test content 4"},
-    {"title":"Todo 5", "content": "This is test content 5"},
-    {"title":"Todo 6", "content": "This is test content 6"},
-    {"title":"Todo 7", "content": "This is test content 7"},
-    {"title":"Todo 8", "content": "This is test content 8"},
-    {"title":"Todo 9", "content": "This is test content 9"}
-  ]`;
 }

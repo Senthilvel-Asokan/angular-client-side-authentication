@@ -1,14 +1,13 @@
 import {RouterModule, Routes} from '@angular/router';
-import {NgModule} from '@angular/core';
+import {RouteConfig, ROUTER_DIRECTIVES} from '@angular/router';
+import {LoginModule} from './auth/login/login.module';
+import {DashboardModule} from './dashboard/dashboard.module';
 
-export const routes: Routes = [
-  {path: '', redirectTo: '/dashboard', pathMatch: 'full'},
-  // {path: 'dashboard', loadChildren: 'app/dashboard/dashboard.module#DashboardModule', canActivate: [LoggedInGuard]}
-];
+@RouteConfig([
+    {path: '/login', name: 'Login', component: LoginComponent, useAsDefault: true},
+    {path: '/dashboard', name: 'Dashboard', component: DashboardComponent},
+    {path: '/*other', name: 'Other', redirectTo: ['Login']}
+])
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
 export class AppRoutingModule {
 }
