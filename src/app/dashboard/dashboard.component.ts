@@ -11,7 +11,7 @@ export class DashboardComponent implements OnInit {
 	}
 	    
 	logout(){
-	    window.localStorage.removeItem('AUTH_USER');
+	    window.localStorage.removeItem('AUTH_TOKEN');
 	    this._router.navigate(['Login']);
 	}
 

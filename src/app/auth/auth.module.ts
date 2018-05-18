@@ -3,7 +3,6 @@ import {CommonModule} from '@angular/common';
 import {LoginComponent} from './login/login.component';
 import {AuthService} from './auth.service';
 import {FormsModule} from '@angular/forms';
-
 import {AuthRoutingModule} from './auth.routing';
 import {AuthCheck} from './authcheck';
 import {MockBackendModule} from '../mock-backend/mock-backend.module';
@@ -12,9 +11,9 @@ import {MockBackendModule} from '../mock-backend/mock-backend.module';
   imports: [
     CommonModule,
     FormsModule,
-    AuthRoutingModule,
-    // HttpModule <- use this in real implementation
+    AuthRoutingModule,                      
     MockBackendModule // <- provide fake Http service, do not use in production!
+    // HttpModule <- use this in real prod implementations
   ],
   declarations: [LoginComponent],
   providers: [
