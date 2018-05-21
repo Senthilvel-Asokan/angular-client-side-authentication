@@ -27,9 +27,8 @@ export class LoginComponent implements OnInit {
     this.authService.login(loginForm.value.email, loginForm.value.password);
   }
   
-  clearfields(loginForm: NgForm) {
-        loginForm.value.email = '';
-        loginForm.value.password = '';
-    }
+  clearfields(loginForm: NgForm): void {
+    this.authService.clearvalues(loginForm.value.email, loginForm.value.password);        
+  }
 
 }

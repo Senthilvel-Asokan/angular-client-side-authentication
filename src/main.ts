@@ -4,17 +4,7 @@ import { environment } from './environments/environment';
 import { AppModule } from './app/app.module';
 
 if (environment.production) {
-    enableProdMode();
-}
+	  enableProdMode();
+	}
 
-let bootstrap = () => {
-    platformBrowserDynamic().bootstrapModule(AppModule);
-};
-
-if (window.cordova) {
-    document.addEventListener('deviceready', bootstrap.bind(this), false);
-}
-
-else {
-    bootstrap();
-}
+	platformBrowserDynamic().bootstrapModule(AppModule);

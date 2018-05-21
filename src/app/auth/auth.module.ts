@@ -19,8 +19,7 @@ import {MockBackendModule} from '../mock-backend/mock-backend.module';
   providers: [
     AuthService,
     AuthCheck,
-    {provide: 'AUTH_TOKEN', useValue: 'token'},
-    {provide: 'AUTH_USER', useValue: 'user'}
+    {provide: 'AUTH_TOKEN', useValue: 'token'}
   ],
   exports: []
 })
