@@ -9,7 +9,7 @@
 			      </p>
 			    </div>
 			    -->
-    	<div class="alert alert-danger" role="alert" *ngIf="showErrorMessage && loginForm.submitted"> Wrong credentials!</div>
+    	<div class="alert alert-danger" role="alert" *ngIf="loginForm.submitted"> Wrong credentials!</div>
     <div class="card small">
     	<div class="card-image waves-effect waves-block waves-light">
      		 <img class="activator" src="http://lorempixel.com/640/480/sports/This-is-sporty/">
@@ -31,7 +31,7 @@
           
          </div>
         <button class="waves-effect waves-light btn" type="submit">Sign in</button>
-        <button class="waves-effect waves-light btn" (click)="loginForm.reset()">Clear</button>
+        <button class="waves-effect waves-light btn" type="reset" (click)="loginForm.reset()">Clear</button>
       </div>
     </div>    
   </form>
