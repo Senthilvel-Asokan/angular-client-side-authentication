@@ -30,11 +30,6 @@ export class AuthService {
     return this.loggedId$;
   }
  
-  clearvalues(email: string, password: string): void {
-      email = '';
-      password = '';
-  }
-  
   logout(): void {
     localStorage.removeItem(this.authToken);
     this.loggedId$.next(false);

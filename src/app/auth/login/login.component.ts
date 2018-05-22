@@ -10,7 +10,8 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   showErrorMessage = false;
-
+  loginForm: NgForm;
+  
   constructor(private authService: AuthService, private router: Router) {
     this.authService.isLoggedId().subscribe((loggedIn: boolean) => {
       this.showErrorMessage = !loggedIn;
@@ -27,8 +28,10 @@ export class LoginComponent implements OnInit {
     this.authService.login(loginForm.value.email, loginForm.value.password);
   }
   
-  clearfields(loginForm: NgForm): void {
-    this.authService.clearvalues(loginForm.value.email, loginForm.value.password);        
-  }
-
+  /*clearfields(): void { 
+	  this.loginForm.reset();
+	//  this.loginForm.email = '';
+	//  this.loginForm.password = '';
+  }*/ 
+  
 }
