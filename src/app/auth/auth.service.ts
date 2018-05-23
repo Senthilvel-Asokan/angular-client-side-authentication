@@ -24,9 +24,9 @@ export class AuthService {
   }
   
   loggingout(): void {
-	  	localStorage.removeItem(this.authToken);
-	    this.loggedId$.next(false);
-	    this._router.navigateByUrl('/login');
+   localStorage.removeItem(this.authToken);
+   this.loggedId$.next(false);
+   this._router.navigateByUrl('/login');
   }
 
   getToken(): string {
