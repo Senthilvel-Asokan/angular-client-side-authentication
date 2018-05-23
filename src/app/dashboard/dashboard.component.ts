@@ -10,10 +10,9 @@ export class DashboardComponent implements OnInit {
 	constructor(private _router:Router){
 	}
 	    
-	logout(){
-	    window.localStorage.removeItem('AUTH_TOKEN');
-	    //this._router.navigate(['Login']);
-	    this._router.navigateByUrl('');
+	logout() {
+	    localStorage.removeItem('AUTH_TOKEN');
+	    this._router.navigateByUrl('/login');	    
 	}
 
   ngOnInit() {
