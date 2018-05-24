@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
     this.authService.isLoggedId().subscribe((loggedIn: boolean) => {
       this.showErrorMessage = !loggedIn;
       if (loggedIn) {
-        this.router.navigateByUrl('');
+        this.router.navigateByUrl('/dashboard');
       }
     });
   }

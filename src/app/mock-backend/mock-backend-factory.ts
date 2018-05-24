@@ -36,7 +36,6 @@ function generateMockResponseOptions(): ResponseOptions {
   return new ResponseOptions({
     headers: headers,
     status: 200,
-    url: 'your-app.com/login',
-    body: `{"firstName": "John", "lastName": "Doe"}`
+    url: 'your-app.com/login'
   });
 }

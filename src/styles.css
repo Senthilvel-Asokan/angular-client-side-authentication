@@ -23,6 +23,7 @@ a {
   cursor: pointer;
   cursor: hand;
 }
+
 button {
   font-family: Arial;
   background-color: #eee;
@@ -31,6 +32,18 @@ button {
   border-radius: 4px;
   cursor: pointer;
   cursor: hand;
+}
+.btn-holder {
+  font-family: Arial;
+  background-color: #eee;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  cursor: hand;
+  position: absolute;
+  right:    0;
+  top:   0;  
 }
 button:hover {
   background-color: #cfd8dc;
