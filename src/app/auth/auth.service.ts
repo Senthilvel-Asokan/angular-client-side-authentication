@@ -14,7 +14,7 @@ export class AuthService {
   }
   
   login(email: string, password: string): void {
-    this.http.post('http://your-app-url.com/login', {username: username, password: password})
+    this.http.post('http://your-app-url.com/login', {email: email, password: password})
       .subscribe((response: any) => {
         localStorage.setItem(this.authToken, response.headers.get('Set-Authorization'));
         this.loggedId$.next(true);
