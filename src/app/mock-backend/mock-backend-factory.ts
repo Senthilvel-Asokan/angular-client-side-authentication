@@ -20,7 +20,7 @@ export function mockBackendFactory(backend: MockBackend, options: BaseRequestOpt
 }
 
 function checkCredentials(body: any, connection: MockConnection) {
-  if (body.email === 'test@test.com' && body.password === 'Password_123') {
+  if (body.email === 'test@test.com' && body.password === 'P@ssword_123') {
     connection.mockRespond(new Response(generateMockResponseOptions()));
   } else {
     connection.mockError(new Error('Wrong credentials'));
